@@ -17,7 +17,10 @@ print()
 
 
 for foot in foot_size:
-    if foot in skates:
-        skates.remove(foot)
-        count += 1
+    for c in range(len(skates)):
+        if skates[c] >= foot:
+            count += 1
+    foot_size.remove(foot)
+
+
 print('Наибольшее кол-во людей, которые могут взять ролики:', count)
