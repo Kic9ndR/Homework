@@ -16,20 +16,12 @@ for i in range(number):
 print()
 
 
-count_skates = 0
-for index in skates:
-    count_skates += skates.count(index)
-    if foot_size.count(index) > 0:
-        count += 1
-        foot_size.remove(index)
-    for foot in foot_size:
-        if index >= foot:
-            if count_skates >= count:
-                count += 1
-                foot_size.remove(foot)
-            else:
-                break
-    skates.remove(index)
-
+for foot in sorted(foot_size):
+    for suitable in sorted(skates):
+        if suitable >= foot:
+            count += 1
+            skates.remove(suitable)
+            break
+    foot_size.remove(foot)
 
 print('Наибольшее кол-во людей, которые могут взять ролики:', count)
