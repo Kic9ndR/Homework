@@ -45,4 +45,28 @@ data = {
 }
 
 
-# TODO здесь писать код
+# 1
+print('-- 1:')
+for i in data:
+    print(f'{i}: {data.get(i)}')
+
+# 2
+print('\n-- 2')
+data["ETH"]['total_diff'] = 100
+print(data)
+
+# 3
+print('\n-- 3')
+data['tokens'][0]['fst_token_info']['name'] = 'doge'
+print(data)
+
+# 4
+print('\n-- 4')
+data['ETH']['total_out'] = data['tokens'][0]['total_out']
+data['tokens'][0].pop("total_out")
+print(data)
+
+# 5
+print('\n-- 5')
+data['tokens'][1]['sec_token_info']['total_price'] = data['tokens'][1]['sec_token_info'].pop('price')
+print(data)
