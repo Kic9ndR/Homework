@@ -14,7 +14,7 @@ count_time = 0
 count_songs = int(input('Сколько песен выбрать: '))
 for i in range(count_songs):
     name_songs = input("Название {0}-й песни: ".format(i + 1))
-    count_time += violator_songs[name_songs]
+    count_time += violator_songs.get(name_songs, 0)
 
 
 print(f'Общее время звучания: {round(count_time, 2)} минут')
