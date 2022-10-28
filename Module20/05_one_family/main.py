@@ -1,1 +1,44 @@
-# TODO здесь писать код
+db = {
+    'Сидоров Никита': 35,
+    'Сидорова Алина': 34,
+    'Сидоров Павел': 10,
+    'Савельев Павел': 20,
+    'Савельева Юлия': 28,
+    'Савин Сергей': 30,
+    'Петров Виктор': 15,
+    'Петрова Дарья': 16
+}
+ending = {
+    'ов': 'ова',
+    'ев': 'ева',
+    'ий': 'ая',
+    'ин': 'ина'
+}
+
+
+def last_char(in_str):
+    for key, value in ending.items():
+        if in_str.endswith(key):
+            in_str = in_str[0:-len(key)]
+            break
+        if in_str.endswith(value):
+            in_str = in_str[0:-len(value)]
+            break
+    return in_str
+
+
+search = input('Введите фамилию: ').lower()
+search_part = last_char(search)
+result = []
+last_name_char = search[-2:]
+
+for i in db:
+    if search_part in i.split()[0].lower():
+        if last_name_char == last_char(i.split()[0].lower()):
+            result.append(i + ' ' + str(db[i]))
+
+if not result:
+    print('Поиск не дал результатов')
+else:
+    for i in result:
+        print(i)
