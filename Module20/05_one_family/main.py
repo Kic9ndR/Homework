@@ -1,4 +1,4 @@
-db = {
+d = {
     'Сидоров Никита': 35,
     'Сидорова Алина': 34,
     'Сидоров Павел': 10,
@@ -8,12 +8,7 @@ db = {
     'Петров Виктор': 15,
     'Петрова Дарья': 16
 }
-ending = {
-    'ов': 'ова',
-    'ев': 'ева',
-    'ий': 'ая',
-    'ин': 'ина'
-}
+ending = {'ов': 'ова', 'ев': 'ева', 'ий': 'ая', 'ин': 'ина'}
 
 
 def last_char(in_str):
@@ -32,10 +27,10 @@ search_part = last_char(search)
 result = []
 last_name_char = search[-2:]
 
-for i in db:
+for i in d:
     if search_part in i.split()[0].lower():
         if last_name_char == last_char(i.split()[0].lower()):
-            result.append(i + ' ' + str(db[i]))
+            result.append(i + ' ' + str(d[i]))
 
 if not result:
     print('Поиск не дал результатов')
