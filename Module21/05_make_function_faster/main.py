@@ -1,9 +1,10 @@
-def calculating_math_func(data):
-    result = 1
-    for index in range(1, data + 1):
-        result *= index
-    result /= data ** 3
-    result = result ** 10
-    return result
 
-# TODO оптимизировать функцию
+def calculating_math_func(data: int):
+    if data == 0:
+        return 1
+    return calculating_math_func(data - 1) * data
+
+number = int(input('Введите число: '))
+
+result = (calculating_math_func(number) // number) ** 10
+print(result)
