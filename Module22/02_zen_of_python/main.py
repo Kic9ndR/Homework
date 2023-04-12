@@ -1,1 +1,5 @@
-# TODO здесь писать код
+file = open('zen.txt', 'r')
+nohtyp = file.readlines()
+nohtyp.reverse()
+print(''.join(nohtyp).strip("\n"))
+file.close()
