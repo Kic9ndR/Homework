@@ -3,7 +3,7 @@ import os
 def custom_key(gamers):
     return gamers[2]
 def result(lst1):
-    min_result = 1
+    min_result = 0
     gamers = []
     for row in lst1:
         lst2 = []
