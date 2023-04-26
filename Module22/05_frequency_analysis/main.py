@@ -12,7 +12,8 @@ def letter_dict(string):
 
 def letter_ratio(dict):
     analysis = open('analysis.txt', 'w', encoding='utf-8')
-    sort_dict = sorted(dict.items(), key=itemgetter(1), reverse=True)
+    items_dict = sorted(dict.items(), key=itemgetter(0))
+    sort_dict = sorted(items_dict, key=itemgetter(1), reverse=True)
     for key, value in sort_dict:
         analysis.write(f'{key} {round(value, 3)}\n')
     analysis.close()
